@@ -1,0 +1,24 @@
+﻿{% extends "monCV/base.html" %}
+
+{% block section %}
+<article>
+	<h2>{{ cours.intitule }}</h2>
+	<h3>Contenu du cours</h3>
+	<pre>{{ cours.contenu }}</pre>
+</article>
+{% endblock %}
+
+
+{% block aside %}
+	<div class="infos">
+		<p><strong>Durée :</strong> {{ cours.duree}} jours</p>
+	</div>
+	<div class="infos">
+		<p><strong>Pre-requis :</strong></p> 
+		<p>{{ cours.prerequis }}</p>
+	</div>
+	<div class="infos">
+		<p><strong>Objectifs :</strong></p>
+		<p>{{ cours.objectif}}</p>
+	</div>
+{% endblock %}

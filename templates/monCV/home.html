@@ -1,0 +1,57 @@
+{% extends "monCV/base.html" %}
+
+{% block section %}
+<article>
+	<div id=tableau_cours>
+		<h2 class="titre_tableau">Formations dispensées</h2>
+		{% for a in formations %}
+			<div class="ligne_cours">
+				<div class=cell_icone>
+					{%if a.icone == "tux" %}
+						<p><img src="static/images/linux_small_25px.png" alt="Tux" title="Cours sous Linux"</p>
+					{%elif a.icone == "cisco" %}			
+						<p><img src="static/images/cisco_small_25px.jpg" alt="Cisco" title="Cours Cisco"</p>
+					{%elif a.icone == "reseaux" %}			
+						<p><img src="static/images/reseaux_25px.png" alt="Réseaux : les bases" title="Réseaux : les bases"</p>
+					{% else %}
+						<p> </p>
+					{% endif %}
+				</div>
+				<p class=cell_nom_cours><a href="{% url 'main.views.afficher_cours' a.id %}">{{ a.intitule }}</a></p>
+			</div>
+		{% empty %}
+			Aucun cours
+		{% endfor %}
+	</div>
+</article>
+{% endblock %}
+
+{% block aside %}
+	<div class="infos">
+		<img class="image" alt="Image" src="/static/images/france_small_45px.png">
+		<p>Basé sur Montpellier,  mobile sur la France métropolitaine</p>
+	</div>
+	<div class="infos">
+		<img class="image" alt="Image" src="/static/images/cours_small_45px.png">
+		<p>Vous ne disposez pas de supports pour vos stagiaires ? je fournis au besoin un support papier.</p>
+	</div>
+	<div class="infos">
+		<img class="image" alt="Image" src="/static/images/cisco_acad_small_55px.png">
+		<p>Instructeur certifié <a href="https://www.netacad.com/" target="_blank">Cisco Academy</a>, je suis habilité à dispenser les cours officiels Cisco et délivrer des certifications académiques pour les cours :</p>
+		<ul>
+			<li>CCNA 1 : les réseaux, notions fondamentales</li>
+			<li>CCNA 2 : le routage</li>
+			<li>CCNA 3 : la commutation</li>
+			<li>CCNA 4 : les réseaux étendus</li>
+			<li>CCNA Security : sécurité des réseaux</li>
+		</ul>
+	</div>
+	<div class="infos">
+		<img class="image" alt="Image" src="/static/images/direccte_small_45px.jpg">
+		<p>Agréé par la <a href="http://www.direccte.gouv.fr/" target="_blank">DIRECCTE</a> comme membre de jury pour les titres :</p>
+		<ul>	
+			<li><a href="https://fr.wikipedia.org/wiki/Technicien_sup%C3%A9rieur_en_r%C3%A9seaux_informatiques_et_t%C3%A9l%C3%A9communications" target="_blank">TSRIT</a> : Technicien Supérieur en Réseaux Informatiques et Télécommunications</li>
+			<li><a href="https://fr.wikipedia.org/wiki/Technicien_sup%C3%A9rieur_de_support_en_informatique" target="_blank">T2SI</a> : Technicien Superieur de Support en Informatique</li>
+		</ul>
+	</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+	<link rel="shortcut icon" href="{% static 'favicon.png' %}" />
+	<title>{% block title %}Benoît Guibert - Formateur{% endblock %}</title>
+</head>
+ 
+<body>
+	<div id="bloc_page">
+		<header>
+			{% block header %}
+			<a href='/'>
+				<div id=name>
+					<h1>B e n o î t</h1>
+					<h1>G U I B E R T</h1>
+				</div>
+				<div id=prof>
+					<h1>Formateur Systèmes et Réseaux</h1>
+				</div>
+			</a>
+			{% endblock %}
+			<nav>
+				{% block nav %}
+				<ul>
+					<li><a href="/">Accueil</a></li>
+					<!-- <li><a href="#">Mes références</a></li> -->
+					<li><a href="mailto:ben@hetica.fr">Contactez-moi !</a></li>
+				</ul>
+				{% endblock %}
+			</nav>
+		</header>
+
+
+		<section>
+			{% block section %}
+			{% endblock %}
+		</section>
+
+		<aside>
+			{% block aside %}
+			{% endblock %}
+		</aside>
+ 
+		<footer>
+			{% block footer %}
+			Copyright © 2014 Benoît Guibert | Powered by moi-même
+			{% endblock %}
+		</footer>
+	</div>
+</body>
+</html>
