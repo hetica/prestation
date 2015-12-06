@@ -16,11 +16,11 @@ class Cours(models.Model):
 	
 	def __str__(self):
 		"""
-                Cette méthode à définir dans tous les modèles permettra
+		Cette méthode à définir dans tous les modèles permettra
 		de reconnaître facilement les différents objets traités
-                par la suite et pour l'administration
-                """
-                return u'%s' % self.id_cours
+		par la suite et pour l'administration
+		"""
+		return u'%s' % self.id_cours
 
 class Categorie(models.Model):
 	id_categorie = models.CharField(max_length=30)
